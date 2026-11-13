@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  /* Mobile-specific font size adjustments */
+  @media (max-width: 640px) {
+    html {
+      font-size: 14px; /* Base font size for mobile */
+    }
+
+    h1 {
+      font-size: 1.5rem; /* 21px */
+    }
+
+    h2 {
+      font-size: 1.125rem; /* 15.75px */
+    }
+
+    h3 {
+      font-size: 1rem; /* 14px */
+    }
+
+    p, div, span {
+      font-size: 0.875rem; /* 12.25px */
+    }
+
+    .text-lg {
+      font-size: 0.9375rem; /* 13.125px */
+    }
+
+    .message-text {
+      font-size: 0.875rem !important; /* Force 12.25px for message text */
+    }
+  }
+}
+
+/* Add smooth theme transition */
+:root {
+  --transition-duration: 200ms;
+}
+
+.dark,
+.light {
+  transition: background-color var(--transition-duration) ease-in-out,
+              color var(--transition-duration) ease-in-out,
+              border-color var(--transition-duration) ease-in-out;
+}
+
+* {
+  transition: background-color var(--transition-duration) ease-in-out,
+              border-color var(--transition-duration) ease-in-out;
+}
